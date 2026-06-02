@@ -8,7 +8,7 @@ public:
     
     Elevator();
     void display_floor();
-    void move(int floor);
+    int move(int floor);
 };
 class elevator_ui {
 private:

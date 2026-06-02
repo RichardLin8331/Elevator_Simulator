@@ -11,7 +11,7 @@ void Elevator::display_floor() {
     cout << "Current floor is " << this->current_floor << endl;
 }
 
-void Elevator::move(int floor) {
+int Elevator::move(int floor) {
     cout << "+ Before move: ";
     this->display_floor();
     int floor_diff = abs(this->current_floor - floor);
@@ -19,11 +19,12 @@ void Elevator::move(int floor) {
 
     for (int i = 0; i < floor_diff; i++) {
         this->current_floor += dir;
-        cout << "--- Moving to " << this->current_floor << " ---\n";
+        cout << "... Moving to " << this->current_floor << " ...\n";
         sleep(1);
     }
     cout << "+ After move: ";
     this->display_floor();
+    return this->current_floor;
 }
 
 elevator_ui::elevator_ui() {
