@@ -11,3 +11,4 @@ run: link
 	./main
 clean:
 	rm ./*.o
+	rm ./main
