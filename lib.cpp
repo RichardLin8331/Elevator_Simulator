@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 #include "lib.h"
 using namespace std;
 
@@ -13,7 +14,14 @@ void Elevator::display_floor() {
 void Elevator::move(int floor) {
     cout << "+ Before move: ";
     this->display_floor();
-    this->current_floor = floor;
+    int floor_diff = abs(this->current_floor - floor);
+    int dir = this->current_floor < floor ? 1 : -1;
+
+    for (int i = 0; i < floor_diff; i++) {
+        this->current_floor += dir;
+        cout << "--- Moving to " << this->current_floor << " ---\n";
+        sleep(1);
+    }
     cout << "+ After move: ";
     this->display_floor();
 }
@@ -29,7 +37,7 @@ void elevator_ui::run() {
     this->elevator1->display_floor();
     cout << "Elevator2:\n+ ";
     this->elevator2->display_floor();
-    cout << "\n";
+    cout << "---------------\n";
     while (1) {
         int elevatur_num;
         int desired_floor;
@@ -45,6 +53,7 @@ void elevator_ui::run() {
             cout<<"Error: Desired floor should between 1 and 10\n\n";
             continue;
         }
+        cout << "\n";
         switch (elevatur_num) {
             case 1:
                 cout << "Elevator1:\n";
@@ -55,12 +64,12 @@ void elevator_ui::run() {
             case 2:
                 cout << "Elevator1:\n+ ";
                 this->elevator1->display_floor();
-                cout << "Elevator2:\n";
+                cout << "\nElevator2:\n";
                 this->elevator2->move(desired_floor);
                 break;
             
         }
 
-        cout << "\n";
+        cout << "---------------\n";
     }
 }
