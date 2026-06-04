@@ -4,16 +4,16 @@
 class ElevatorTest : public ::testing::Test {
 protected:
     Elevator e;
+    channel sc;
 };
 
 
 TEST_F(ElevatorTest, MoveUpward) {
-    int final_floor = e.move(5);
+    int final_floor = e.move(2, 5, sc);
     EXPECT_EQ(final_floor, 5);
 }
 
 TEST_F(ElevatorTest, MoveDownward) {
-    e.move(6);
-    int final_floor = e.move(3);
+    int final_floor = e.move(9,3, sc);
     EXPECT_EQ(final_floor, 3);
 }

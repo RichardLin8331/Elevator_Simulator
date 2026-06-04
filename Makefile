@@ -6,9 +6,9 @@ GTEST_LIBS = -lgtest -lgtest_main -pthread
 all: compile link run
 compile: $(OBJ_FILES)
 %.o: ./%.cpp
-	g++ -std=c++11 -c -o $@ $<
+	g++ -c -o $@ $<
 link: $(OBJ_FILES)
-	g++ -std=c++11 $(MAIN_OBJ_FILES) -o main
+	g++ $(MAIN_OBJ_FILES) -o main
 run: link
 	./main
 test: $(OBJ_FILES)
