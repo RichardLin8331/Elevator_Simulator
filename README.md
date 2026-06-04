@@ -4,62 +4,134 @@
 make all
 
 Elevator Start Running!! 
-Elevator1:
-+ Current floor is 1
-Elevator2:
-+ Current floor is 1
+Elevator 1 is at floor 1
+Elevator 2 is at floor 1
 ```
 ### User Interface
-1. Choose Elevator: 
-    + Choose the target elevator number, 1 or 2.
-2. Choose Floor: 
-    + Assign the desired floor, ranging from 1 to 10.
++ Input (Elevator, Current, Desired): 
+    + Commands consist of three integers separated by spaces.
+    + The system first moves the designated elevator to the "Current" floor to pick up the user, then proceeds to the "Desired" floor.
 
 + Example
 ```=shell
 ---------------
-// 1. Move Elevator 1 to 3rd floor.
+// 1. Move Elevator 1 to 9th floor first, then go to the 2nd floor.
 
-Choose Elevator: 1
-Choose Floor: 3
-
-Elevator1:
-+ Before move: Current floor is 1
-... Moving to 2 ...
-... Moving to 3 ...
-+ After move: Current floor is 3
-Elevator2:
-+ Current floor is 1
+Input (Elevator, Current, Desired): 
+1 9 2
+Elevator 1 is at floor 2
+Elevator 2 is at floor 1
 ---------------
-// 2. Move Elevator 2 to 5th floor first, then go downward to 2nd floor.
 
-Choose Elevator: 2
-Choose Floor: 5
-
-Elevator1:
-+ Current floor is 3
-
-Elevator2:
-+ Before move: Current floor is 1
-... Moving to 2 ...
-... Moving to 3 ...
-... Moving to 4 ...
-... Moving to 5 ...
-+ After move: Current floor is 5
+Input (Elevator, Current, Desired): 
+Elevator 1 is at floor 3
+Elevator 2 is at floor 1
 ---------------
-Choose Elevator: 2
-Choose Floor: 2
 
-Elevator1:
-+ Current floor is 3
-
-Elevator2:
-+ Before move: Current floor is 5
-... Moving to 4 ...
-... Moving to 3 ...
-... Moving to 2 ...
-+ After move: Current floor is 2
+// 2. During Elevator 1's movement, assign Elevator 2.
+Input (Elevator, Current, Desired): 
+2 5 8
+Elevator 1 is at floor 4
+Elevator 2 is at floor 1
 ---------------
+
+Input (Elevator, Current, Desired): 
+
+Elevator 1 is at floor 4
+Elevator 2 is at floor 2
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1 is at floor 5
+Elevator 2 is at floor 2
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1 is at floor 5
+Elevator 2 is at floor 3
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1 is at floor 6
+Elevator 2 is at floor 3
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1 is at floor 6
+Elevator 2 is at floor 4
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 7
+Elevator 2  is at floor 4
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 7
+Elevator 2  is at floor 5
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 8
+Elevator 2  is at floor 5
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 8
+Elevator 2  is at floor 6
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 9
+Elevator 2  is at floor 6
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 9
+Elevator 2  is at floor 7
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 8
+Elevator 2  is at floor 7
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 8
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 7
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 6
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 5
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 4
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 3
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired): 
+Elevator 1  is at floor 2
+Elevator 2  is at floor 8
+---------------
+
+Input (Elevator, Current, Desired):
 ```
 
 ## Unit Test
